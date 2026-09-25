@@ -1,0 +1,19 @@
+{
+  "name": "heritage-360",
+  "version": "1.0.0",
+  "description": "HERITAGE 360 - Smart India Hackathon 2026 digital platform for India's living cultural heritage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "heritage-360",
+    "smart-india-hackathon-2026",
+    "cultural-heritage",
+    "ai-avatar",
+    "3d-monuments",
+    "interactive-maps"
+  ],
+  "author": "Smart India Hackathon 2026 Team",
+  "license": "MIT"
+}

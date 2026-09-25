@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HERITAGE 360 | Discover India Beyond History</title>
+  <meta name="description" content="HERITAGE 360 — Experience, learn and preserve India's living heritage through interactive technology. Smart India Hackathon 2026 digital platform featuring AI Avatar Aruvi, 3D Time Travel, Living Map, Heritage Lab, and Citizen Documentation.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&family=Yatra+One&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet GIS Map CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Decorative Mandala Grid Background -->
+  <div class="mandala-bg"></div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="navbar" id="topNavbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-emblem">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">HERITAGE <span>360</span></div>
+          <span class="brand-tag">Smart India Hackathon 2026</span>
+        </div>
+      </a>
+
+      <!-- 8 Core Pages Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Home</a></li>
+        <li><a href="#map-section" class="nav-link">Living Map</a></li>
+        <li><a href="#timetravel-section" class="nav-link">Time Travel</a></li>
+        <li><a href="#avatar-section" class="nav-link">AI Avatar</a></li>
+        <li><a href="#lab-section" class="nav-link">Heritage Lab</a></li>
+        <li><a href="#learn-section" class="nav-link">Learn by Doing</a></li>
+        <li><a href="#document-section" class="nav-link">Document Heritage</a></li>
+        <li><a href="#profile-section" class="nav-link">User Profile</a></li>
+      </ul>
+
+      <!-- Action Items & XP Pill -->
+      <div class="nav-actions">
+        <a href="#profile-section" class="xp-badge-pill" id="navXpPill" title="Your Cultural XP Progress">
+          <span>🏆</span>
+          <span id="navXpText">1,450 XP</span>
+        </a>
+        <a href="#map-section" class="btn-primary" style="padding: 0.55rem 1.25rem; font-size: 0.85rem;">
+          Explore Now
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ====================================================================
+         1. HOME PAGE
+         ==================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-glow-orb"></div>
+      <div class="hero-mandala-ring"></div>
+      <div class="hero-mandala-ring-inner"></div>
+
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse"></span>
+          <span>Smart India Hackathon 2026 · Ministry of Culture Initiative</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="gradient-text-gold">Discover India Beyond History</span>
+        </h1>
+
+        <div class="hero-tagline">
+          Experience, learn and preserve India's living heritage through interactive technology.
+        </div>
+
+        <p class="hero-intro">
+          Step into a living digital museum bridging 5,000 years of civilizational splendor with frontier technology. Discover temple sciences, experience interactive 3D monuments, converse with our friendly AI guide Aruvi, create authentic sacred art, and preserve local oral lore on the National Cultural Ledger.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#map-section" class="btn-primary">
+            <span>Explore Heritage</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#avatar-section" class="btn-secondary">
+            <span>Start Your Journey</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+
+        <!-- Institutional Trust & Verification Badges -->
+        <div class="trust-partners-bar">
+          <div class="trust-partner-item">
+            <span class="icon">🏛️</span>
+            <span>Archaeological Survey of India (ASI)</span>
+          </div>
+          <div class="trust-partner-item">
+            <span class="icon">📜</span>
+            <span>IGNCA Archival Corpus</span>
+          </div>
+          <div class="trust-partner-item">
+            <span class="icon">🪕</span>
+            <span>Sangeet Natak Akademi</span>
+          </div>
+          <div class="trust-partner-item">
+            <span class="icon">🌐</span>
+            <span>UNESCO Intangible Heritage</span>
+          </div>
+          <div class="trust-partner-item">
+            <span class="icon">🏷️</span>
+            <span>GI Registry of India</span>
+          </div>
+        </div>
+
+        <!-- Five Core Feature Cards on Home -->
+        <div class="features-section">
+          <div class="features-grid-5">
+            <!-- 1. AI Culture Avatar -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">🕉️</div>
+              <h3 class="feature-title">AI Culture Avatar</h3>
+              <p class="feature-desc">
+                Meet <strong>Aruvi</strong>, your friendly AI cultural companion. Converse through text or voice in Indian languages with simulated intelligent reasoning and verified academic citations.
+              </p>
+              <a href="#avatar-section" class="feature-action-link">
+                <span>Chat with Aruvi</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- 2. Time Travel India -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">⏳</div>
+              <h3 class="feature-title">Time Travel India</h3>
+              <p class="feature-desc">
+                Journey through our interactive historical timeline: <strong>Ancient → Medieval → Colonial → Modern → Future</strong> with 3D monument twins, day/sunset lighting, and ambient soundscapes.
+              </p>
+              <a href="#timetravel-section" class="feature-action-link">
+                <span>Enter Chronological Portal</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- 3. Living Heritage Map -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">🗺️</div>
+              <h3 class="feature-title">Living Heritage Map</h3>
+              <p class="feature-desc">
+                Select states across India to discover traditions, festivals, master crafts, regional food, folk music, languages, and local community stories with verified source indicators.
+              </p>
+              <a href="#map-section" class="feature-action-link">
+                <span>Navigate the Map</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- 4. Future Heritage Lab -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">🎨</div>
+              <h3 class="feature-title">Future Heritage Lab</h3>
+              <p class="feature-desc">
+                Interactive hands-on creative preservation studio: <strong>Kolam creator</strong>, <strong>Traditional pattern creator</strong>, <strong>Virtual pottery wheel</strong>, and <strong>Textile design studio</strong>.
+              </p>
+              <a href="#lab-section" class="feature-action-link">
+                <span>Launch Creative Studio</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+
+            <!-- 5. Learn by Doing -->
+            <div class="feature-card">
+              <div class="feature-icon-wrapper">🎯</div>
+              <h3 class="feature-title">Learn by Doing</h3>
+              <p class="feature-desc">
+                Gamified learning suite: Cultural knowledge quizzes, "Identify the Monument" challenges, "Match the Art Form", Web Audio Tabla percussion, XP progression, and badges.
+              </p>
+              <a href="#learn-section" class="feature-action-link">
+                <span>Play & Level Up</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         2. LIVING HERITAGE MAP
+         ==================================================================== -->
+    <section class="map-section" id="map-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Geospatial Canvas</div>
+          <h2 class="section-title">Living Heritage Map of India</h2>
+          <p class="section-desc">
+            Select any state or region to discover living traditions, sacred festivals, GI-tagged crafts, heirloom cuisines, classical & folk music, languages, and community stories.
+          </p>
+        </div>
+
+        <!-- Quick State Select Chips -->
+        <div class="map-state-quick-chips" id="mapStateQuickChips">
+          <!-- Dynamically populated or interactive chips -->
+          <button class="map-state-chip active" data-state-code="TN">Tamil Nadu</button>
+          <button class="map-state-chip" data-state-code="KL">Kerala</button>
+          <button class="map-state-chip" data-state-code="KA">Karnataka</button>
+          <button class="map-state-chip" data-state-code="RJ">Rajasthan</button>
+          <button class="map-state-chip" data-state-code="OD">Odisha</button>
+          <button class="map-state-chip" data-state-code="UP">Uttar Pradesh</button>
+          <button class="map-state-chip" data-state-code="WB">West Bengal</button>
+          <button class="map-state-chip" data-state-code="AS">Assam</button>
+          <button class="map-state-chip" data-state-code="GJ">Gujarat</button>
+          <button class="map-state-chip" data-state-code="MH">Maharashtra</button>
+          <button class="map-state-chip" data-state-code="MP">Madhya Pradesh</button>
+          <button class="map-state-chip" data-state-code="ML">Meghalaya</button>
+          <button class="map-state-chip" data-state-code="JK">Jammu & Kashmir</button>
+          <button class="map-state-chip" data-state-code="PB">Punjab</button>
+          <button class="map-state-chip" data-state-code="BR">Bihar</button>
+        </div>
+
+        <div class="map-layout">
+          <!-- Left: Map Visual Container -->
+          <div class="map-display-container">
+            <div class="map-svg-wrapper" id="svgMapContainer">
+              <svg class="india-svg" viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                  </filter>
+                </defs>
+
+                <!-- Stylized Regional Vectors -->
+                <g id="regionsGroup">
+                  <path class="region-path" data-region="north" d="M 230 40 Q 280 20 330 40 L 370 110 L 330 180 L 220 190 L 170 120 Z" />
+                  <path class="region-path" data-region="west" d="M 120 200 L 220 190 L 230 320 L 150 360 L 90 280 Z" />
+                  <path class="region-path" data-region="central" d="M 230 200 L 360 200 L 370 330 L 240 330 Z" />
+                  <path class="region-path" data-region="east" d="M 370 210 L 460 220 L 440 350 L 360 340 Z" />
+                  <path class="region-path" data-region="northeast" d="M 470 170 Q 560 160 570 230 L 510 270 L 470 230 Z" />
+                  <path class="region-path active" data-region="south" d="M 170 360 L 350 350 L 300 520 L 250 630 L 220 540 Z" />
+                </g>
+
+                <!-- Interactive Region Pins -->
+                <g class="map-pin" data-region="north" transform="translate(260, 110)">
+                  <circle class="pulse" r="16" fill="rgba(232, 93, 4, 0.4)"/>
+                  <circle r="9" fill="#E85D04" stroke="#FFF" stroke-width="2"/>
+                  <text x="14" y="5" fill="#FFF" font-size="12" font-weight="700" font-family="'Cinzel', serif">North</text>
+                </g>
+
+                <g class="map-pin active" data-region="south" transform="translate(250, 480)">
+                  <circle class="pulse" r="18" fill="rgba(212, 175, 55, 0.5)"/>
+                  <circle r="10" fill="#D4AF37" stroke="#FFF" stroke-width="2" filter="url(#goldGlow)"/>
+                  <text x="16" y="5" fill="#F6D365" font-size="13" font-weight="800" font-family="'Cinzel', serif">South</text>
+                </g>
+
+                <g class="map-pin" data-region="west" transform="translate(160, 260)">
+                  <circle class="pulse" r="16" fill="rgba(232, 93, 4, 0.4)"/>
+                  <circle r="9" fill="#E85D04" stroke="#FFF" stroke-width="2"/>
+                  <text x="14" y="5" fill="#FFF" font-size="12" font-weight="700" font-family="'Cinzel', serif">West</text>
+                </g>
+
+                <g class="map-pin" data-region="east" transform="translate(410, 270)">
+                  <circle class="pulse" r="16" fill="rgba(232, 93, 4, 0.4)"/>
+                  <circle r="9" fill="#E85D04" stroke="#FFF" stroke-width="2"/>
+                  <text x="14" y="5" fill="#FFF" font-size="12" font-weight="700" font-family="'Cinzel', serif">East</text>
+                </g>
+
+                <g class="map-pin" data-region="central" transform="translate(290, 270)">
+                  <circle class="pulse" r="16" fill="rgba(232, 93, 4, 0.4)"/>
+                  <circle r="9" fill="#E85D04" stroke="#FFF" stroke-width="2"/>
+                  <text x="14" y="5" fill="#FFF" font-size="12" font-weight="700" font-family="'Cinzel', serif">Central</text>
+                </g>
+
+                <g class="map-pin" data-region="northeast" transform="translate(510, 210)">
+                  <circle class="pulse" r="16" fill="rgba(232, 93, 4, 0.4)"/>
+                  <circle r="9" fill="#E85D04" stroke="#FFF" stroke-width="2"/>
+                  <text x="14" y="5" fill="#FFF" font-size="12" font-weight="700" font-family="'Cinzel', serif">NE</text>
+                </g>
+              </svg>
+            </div>
+            <div id="leafletMap" style="display: none;"></div>
+          </div>
+
+          <!-- Right: Comprehensive State Heritage Dossier -->
+          <div class="map-info-card" id="mapInfoCard">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span class="map-info-badge" id="mapStateBadge">Tamil Nadu · Dravidian Heritage</span>
+              <span class="verified-badge">✓ Verified Source</span>
+            </div>
+            
+            <h3 class="map-info-title" id="mapStateTitle">Tamil Nadu</h3>
+            <p class="map-info-desc" id="mapStateDesc">
+              A timeless cradle of Sangam literature, granitic Chola temple spires, classical Bharatanatyam, and unbroken hereditary artisan lineages.
+            </p>
+
+            <div class="state-facets-grid">
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>📜</span><span>Traditions & Lore</span></div>
+                <div class="facet-box-content" id="stateTraditions">
+                  Sangam poetry assemblies, Kudavolai democratic village voting, Kolam sacred geometry.
+                </div>
+              </div>
+
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>🎉</span><span>Festivals</span></div>
+                <div class="facet-box-content" id="stateFestivals">
+                  Pongal Harvest, Natyanjali Dance Festival, Madurai Chithirai Thiruvizha.
+                </div>
+              </div>
+
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>🧵</span><span>Master Crafts</span></div>
+                <div class="facet-box-content" id="stateCrafts">
+                  Kanjeevaram Silk (GI), Swamimalai Bronze Idols (GI), Thanjavur Paintings (GI).
+                </div>
+              </div>
+
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>🍲</span><span>Cuisine</span></div>
+                <div class="facet-box-content" id="stateFood">
+                  Chettinad Pepper Spices, Madurai Jigarthanda, Filter Coffee, Idli & Sambar.
+                </div>
+              </div>
+
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>🪕</span><span>Music & Dance</span></div>
+                <div class="facet-box-content" id="stateMusic">
+                  Carnatic Classical Music, Bharatanatyam, Nadaswaram & Thavil temple orchestra.
+                </div>
+              </div>
+
+              <div class="state-facet-box">
+                <div class="facet-box-header"><span>🗣️</span><span>Languages</span></div>
+                <div class="facet-box-content" id="stateLanguages">
+                  Classical Tamil (Sangam roots, 2,500+ years antiquity), Badaga, Irula.
+                </div>
+              </div>
+            </div>
+
+            <div class="verified-source-note">
+              <span>📚</span>
+              <span>Reference: <strong>ASI Epigraphia Indica & IGNCA Southern Regional Archive</strong></span>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+              <button class="btn-primary" onclick="window.heritageApp.openDeepDive('brihadisvara')">
+                <span>View Full Cultural Dossier</span>
+              </button>
+              <button class="btn-secondary" onclick="window.heritageApp.bookmarkCurrentHeritage()">
+                <span>⭐ Bookmark State</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         3. TIME TRAVEL INDIA
+         ==================================================================== -->
+    <section class="timetravel-section" id="timetravel-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Chronological Portal</div>
+          <h2 class="section-title">Time Travel India</h2>
+          <p class="section-desc">
+            Explore India's civilizational continuum across 5 historical periods: <strong>Ancient → Medieval → Colonial → Modern → Future</strong> with interactive 3D digital twins and architectural engineering secrets.
+          </p>
+        </div>
+
+        <!-- 5 Chronological Period Tabs -->
+        <div class="era-nav-tabs-5">
+          <button class="era-tab-btn active" data-era="ancient">1. Ancient India</button>
+          <button class="era-tab-btn" data-era="medieval">2. Medieval India</button>
+          <button class="era-tab-btn" data-era="colonial">3. Colonial Period</button>
+          <button class="era-tab-btn" data-era="modern">4. Modern India</button>
+          <button class="era-tab-btn future-era" data-era="future">5. Future Heritage</button>
+        </div>
+
+        <div class="era-main-layout">
+          <!-- 3D / 360° Interactive Viewport -->
+          <div class="era-3d-viewport-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <div style="font-family: var(--font-serif); color: var(--gold-light); font-size: 1.1rem;" id="monument3dTitle">
+                🏛️ 3D Interactive Spatial Twin: Konark Sun Temple
+              </div>
+              <div style="display: flex; gap: 0.5rem;">
+                <button class="btn-secondary" id="lightToggleBtn" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;">☀️ Day Light</button>
+                <button class="btn-secondary" id="audioAmbienceBtn" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;">🔔 Soundscape</button>
+              </div>
+            </div>
+
+            <div class="canvas-3d-container">
+              <canvas id="monument3dCanvas"></canvas>
+              <div class="canvas-3d-overlay">
+                <span class="canvas-3d-badge">Drag 360° · Scroll to Zoom</span>
+                <span class="canvas-3d-badge">Click Glowing Hotspots</span>
+              </div>
+            </div>
+
+            <!-- Monument Switcher Bar -->
+            <div class="monument-switch-bar">
+              <button class="monument-tab active" data-monument="konark">Konark Sun Temple</button>
+              <button class="monument-tab" data-monument="hampi">Hampi Stone Chariot</button>
+              <button class="monument-tab" data-monument="indus">Mohenjo-daro Bath</button>
+              <button class="monument-tab" data-monument="thanjavur">Brihadisvara Spire</button>
+              <button class="monument-tab" data-monument="future">Future Sanctum AI</button>
+            </div>
+          </div>
+
+          <!-- Era Cultural Information -->
+          <div class="era-content-box">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+              <span class="era-years-badge" id="eraYearsBadge">c. 2600 BCE – 500 CE</span>
+              <span class="verified-badge">✓ Verified Source</span>
+            </div>
+            
+            <h3 class="era-title" id="eraTitleText">Ancient India & Indus Valley</h3>
+            <p class="era-lead" id="eraLeadText">
+              The dawn of urban planning, Vedic philosophical inquiry, astronomical mathematics, lost-wax metallurgy, and the golden cultural renaissance of the Maurya and Gupta dynasties.
+            </p>
+
+            <div class="era-facet-nav">
+              <button class="era-facet-btn active" data-facet="events">Events</button>
+              <button class="era-facet-btn" data-facet="architecture">Architecture</button>
+              <button class="era-facet-btn" data-facet="clothing">Clothing</button>
+              <button class="era-facet-btn" data-facet="food">Food</button>
+              <button class="era-facet-btn" data-facet="art">Art & Traditions</button>
+              <button class="era-facet-btn" data-facet="locations">Locations</button>
+            </div>
+
+            <div class="era-facet-content">
+              <ul class="era-highlights-list" id="eraHighlightsList">
+                <!-- Dynamically populated from JS -->
+              </ul>
+            </div>
+
+            <div class="verified-source-note">
+              <span>📚</span>
+              <span>Source: <strong>Archaeological Survey of India (ASI) & National Museum Corpus</strong></span>
+            </div>
+
+            <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+              <button class="btn-primary" onclick="window.heritageApp.askAvatar('Tell me more about ' + document.getElementById('eraTitleText').textContent)">
+                <span>Ask Aruvi About This Period</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         4. AI CULTURE AVATAR ("ARUVI")
+         ==================================================================== -->
+    <section class="avatar-section" id="avatar-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive AI Cultural Companion</div>
+          <h2 class="section-title">Meet Aruvi: AI Culture Avatar</h2>
+          <p class="section-desc">
+            Your friendly virtual cultural guide. Ask questions through text or voice in Indian languages with simulated intelligent reasoning, verified academic citations, and natural audio synthesis.
+          </p>
+        </div>
+
+        <div class="avatar-layout">
+          <!-- Left: Friendly Animated Avatar Persona Box -->
+          <div class="avatar-visual-box">
+            <div class="avatar-status-pill">
+              <span class="radar-live-dot"></span>
+              <span>Aruvi Online · Ready to Converse</span>
+            </div>
+
+            <div class="avatar-hologram-canvas-wrapper">
+              <canvas id="avatarCanvas" width="240" height="240"></canvas>
+            </div>
+
+            <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: #FFFFFF;">
+              Aruvi (அருவி)
+            </h4>
+            <p style="color: var(--gold-accent); font-size: 0.88rem; font-weight: 600;">
+              Cultural Wisdom Companion · SIH 2026 Edition
+            </p>
+
+            <div class="aruvi-guide-bio">
+              "Vanakkam & Namaste! I am Aruvi, named after the sacred freshwater cascade. I am trained on India's 5,000-year civilizational archives to help students discover the science, symbolism, and soul of Indian traditions."
+            </div>
+          </div>
+
+          <!-- Right: Interactive Avatar Console -->
+          <div class="avatar-console-box">
+            <div class="console-header">
+              <div class="console-title-group">
+                <h3>Aruvi AI Cultural Dialogue</h3>
+                <p>Equipped with Speech-to-Text & Text-to-Speech Voice Engine</p>
+              </div>
+
+              <!-- Multi-Language Selector -->
+              <div class="language-selector-wrapper">
+                <label for="avatarLangSelect" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700;">LANG:</label>
+                <select class="language-select" id="avatarLangSelect">
+                  <option value="en-IN">English (India)</option>
+                  <option value="hi-IN">हिंदी (Hindi)</option>
+                  <option value="ta-IN">தமிழ் (Tamil)</option>
+                  <option value="te-IN">తెలుగు (Telugu)</option>
+                  <option value="bn-IN">বাংলা (Bengali)</option>
+                  <option value="mr-IN">मराठी (Marathi)</option>
+                  <option value="gu-IN">ગુજરાતી (Gujarati)</option>
+                  <option value="sa-IN">संस्कृतम् (Sanskrit)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Chat Message History -->
+            <div class="avatar-chat-body" id="avatarChatHistory">
+              <div class="avatar-message bot">
+                Vanakkam & Namaste! I am Aruvi, your friendly AI cultural companion. You can ask me anything about Indian heritage, temple acoustics, festive traditions, classical dance mudras, handloom weaves, or local stories!
+                <div class="avatar-msg-meta">
+                  <span class="verified-badge" style="font-size: 0.68rem; padding: 0.15rem 0.5rem;">✓ Verified Source: Sangeet Natak Akademi & ASI</span>
+                  <button class="tts-speaker-btn" onclick="window.heritageApp.speakText(this.parentElement.parentElement.innerText)">
+                    <span>🔊 Listen</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Example Question Chips -->
+            <div class="suggested-prompts-bar">
+              <button class="suggested-chip">Tell me about the science of temple architecture</button>
+              <button class="suggested-chip">What is the history of Pongal and Makar Sankranti?</button>
+              <button class="suggested-chip">Explain the mudras in Bharatanatyam</button>
+              <button class="suggested-chip">How are Kanjeevaram and Banarasi silks woven?</button>
+              <button class="suggested-chip">What are Living Root Bridges of Meghalaya?</button>
+              <button class="suggested-chip">Why do traditional houses have central courtyards?</button>
+            </div>
+
+            <!-- Input Bar with Mic & Send -->
+            <div class="avatar-input-bar">
+              <button class="mic-toggle-btn" id="micToggleBtn" title="Speech to Text: Speak your question to Aruvi">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="23"></line>
+                  <line x1="8" y1="23" x2="16" y2="23"></line>
+                </svg>
+              </button>
+
+              <input type="text" class="avatar-input" id="avatarTextInput" placeholder="Ask Aruvi about Indian heritage, mudras, festivals, crafts..." />
+
+              <button class="btn-primary" id="avatarSendBtn" style="padding: 0.65rem 1.25rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         5. HERITAGE LAB (4 INTERACTIVE CREATIVE ACTIVITIES)
+         ==================================================================== -->
+    <section class="lab-section" id="lab-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Interactive Creative Studio</div>
+          <h2 class="section-title">Future Heritage Lab</h2>
+          <p class="section-desc">
+            Hands-on digital preservation. Experience living traditions through interactive creation: draw sacred <strong>Kolams</strong>, generate architectural <strong>Patterns</strong>, throw clay on a <strong>Virtual Potter's Wheel</strong>, and design royal <strong>Textiles</strong>. Save and export your creations!
+          </p>
+        </div>
+
+        <!-- 4 Creative Activity Switcher Tabs -->
+        <div class="lab-tabs-nav">
+          <button class="lab-tab-btn active" data-lab-tool="kolam">✨ 1. Kolam Creator</button>
+          <button class="lab-tab-btn" data-lab-tool="pattern">📐 2. Traditional Pattern Creator</button>
+          <button class="lab-tab-btn" data-lab-tool="pottery">🏺 3. Virtual Pottery Wheel</button>
+          <button class="lab-tab-btn" data-lab-tool="textile">🧵 4. Textile Design Studio</button>
+        </div>
+
+        <!-- Tool 1: Kolam Creator Workspace -->
+        <div class="lab-workspace-card" id="kolamWorkspace">
+          <div class="lab-workspace-header">
+            <div>
+              <h3 class="lab-workspace-title">Sacred Kolam & Rangoli Canvas</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                Draw sacred geometry on canvas. Toggle between 8-fold radial symmetry and traditional South Indian Pulli (dot grid) modes!
+              </p>
+            </div>
+            <div class="lab-options-group">
+              <button class="btn-secondary" id="kolamModeRadialBtn" style="padding: 0.4rem 0.85rem; font-size: 0.8rem; background: var(--saffron-primary); color: #FFF;">
+                8-Fold Radial Mode
+              </button>
+              <button class="btn-secondary" id="kolamModeDotBtn" style="padding: 0.4rem 0.85rem; font-size: 0.8rem;">
+                Pulli Dot Grid Mode
+              </button>
+            </div>
+          </div>
+
+          <div class="lab-canvas-container">
+            <canvas id="rangoliCanvas" class="lab-interactive-canvas"></canvas>
+          </div>
+
+          <div class="lab-controls-bar">
+            <div class="color-swatches">
+              <div class="color-swatch active" data-color="#FFFFFF" style="background: #FFFFFF;" title="Sacred Rice White"></div>
+              <div class="color-swatch" data-color="#FF8533" style="background: #FF8533;" title="Saffron Orange"></div>
+              <div class="color-swatch" data-color="#D4AF37" style="background: #D4AF37;" title="Temple Gold"></div>
+              <div class="color-swatch" data-color="#E11D48" style="background: #E11D48;" title="Sindoor Crimson"></div>
+              <div class="color-swatch" data-color="#10B981" style="background: #10B981;" title="Emerald Green"></div>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-secondary" id="presetRangoliBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem;">Preset Mandala</button>
+              <button class="btn-secondary" id="clearRangoliBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem;">Clear</button>
+              <button class="btn-primary" id="saveKolamBtn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem;">💾 Save Creation (+50 XP)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 2: Traditional Pattern Creator Workspace (Hidden by default) -->
+        <div class="lab-workspace-card" id="patternWorkspace" style="display: none;">
+          <div class="lab-workspace-header">
+            <div>
+              <h3 class="lab-workspace-title">Traditional Architectural Pattern & Jaali Generator</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                Generate parametric repeating Mughal marble Jaali lattices, Ajrakh star blocks, and temple borders.
+              </p>
+            </div>
+            <div class="lab-options-group">
+              <select class="form-select" id="patternMotifSelect" style="width: auto; padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+                <option value="jaali">Hexagonal Jaali Lattice</option>
+                <option value="ajrakh">Ajrakh Geometric Star</option>
+                <option value="paisley">Kalka Paisley Repeat</option>
+                <option value="floral">Mughal Floral Jharokha</option>
+              </select>
+              <select class="form-select" id="patternDensitySelect" style="width: auto; padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+                <option value="3">3x3 Grid Density</option>
+                <option value="4">4x4 Grid Density</option>
+                <option value="5">5x5 Grid Density</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="lab-canvas-container">
+            <canvas id="patternCanvas" class="lab-interactive-canvas"></canvas>
+          </div>
+
+          <div class="lab-controls-bar">
+            <div class="lab-options-group">
+              <span style="font-size: 0.82rem; color: var(--gold-light); font-weight: 700;">Palette:</span>
+              <button class="btn-secondary active" data-pal="#D4AF37,#1E293B" style="padding: 0.3rem 0.75rem; font-size: 0.78rem;">Gold & Slate</button>
+              <button class="btn-secondary" data-pal="#C85A32,#070B14" style="padding: 0.3rem 0.75rem; font-size: 0.78rem;">Terracotta</button>
+              <button class="btn-secondary" data-pal="#1D4ED8,#FFF" style="padding: 0.3rem 0.75rem; font-size: 0.78rem;">Jaipur Blue</button>
+            </div>
+
+            <button class="btn-primary" id="savePatternBtn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem;">💾 Save Pattern (+50 XP)</button>
+          </div>
+        </div>
+
+        <!-- Tool 3: Virtual Pottery Wheel Workspace (Hidden by default) -->
+        <div class="lab-workspace-card" id="potteryWorkspace" style="display: none;">
+          <div class="lab-workspace-header">
+            <div>
+              <h3 class="lab-workspace-title">Virtual Clay Wheel Pottery Studio</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                Drag your mouse horizontally across the spinning clay to shape the vase rim, neck, and belly. Pick traditional glazes!
+              </p>
+            </div>
+            <div class="lab-options-group">
+              <select class="form-select" id="glazeSelect" style="width: auto; padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+                <option value="terracotta">Terracotta Earth Glaze</option>
+                <option value="jaipur">Jaipur Blue Pottery Glaze</option>
+                <option value="kutch">Kutch White Clay Slip</option>
+                <option value="celadon">Celadon Jade Glaze</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="lab-canvas-container" style="background: radial-gradient(circle at 50% 80%, #1A263E 0%, #060A14 80%);">
+            <canvas id="potteryCanvas" class="lab-interactive-canvas"></canvas>
+          </div>
+
+          <div class="lab-controls-bar">
+            <div style="font-size: 0.82rem; color: var(--text-secondary);">
+              <span>💡 Drag horizontally on the clay to shape curvature.</span>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-secondary" id="resetPotteryBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem;">Reset Clay</button>
+              <button class="btn-primary" id="bakePotteryBtn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem;">🔥 Bake & Save Vessel (+50 XP)</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tool 4: Textile Design Studio Workspace (Hidden by default) -->
+        <div class="lab-workspace-card" id="textileWorkspace" style="display: none;">
+          <div class="lab-workspace-header">
+            <div>
+              <h3 class="lab-workspace-title">Textile & Handloom Design Studio</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                Select heritage fabric bases and click on the loom to stamp authentic Zari gold and natural dye motifs.
+              </p>
+            </div>
+            <div class="lab-options-group">
+              <select class="form-select" id="fabricBaseSelect" style="width: auto; padding: 0.35rem 0.85rem; font-size: 0.82rem;">
+                <option value="tussar">Raw Tussar Silk (Ivory/Gold)</option>
+                <option value="kanjeevaram">Mulberry Silk (Royal Navy)</option>
+                <option value="khadi">Khadi Handspun (Natural Cream)</option>
+                <option value="maroon">Chanderi Brocade (Imperial Maroon)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="lab-canvas-container">
+            <canvas id="textileCanvas" class="lab-interactive-canvas"></canvas>
+          </div>
+
+          <div class="lab-controls-bar">
+            <div class="lab-options-group">
+              <span style="font-size: 0.82rem; color: var(--gold-light); font-weight: 700;">Motif Stamper:</span>
+              <button class="btn-secondary active" data-stamp="peacock" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;">🦚 Peacock (Mayil)</button>
+              <button class="btn-secondary" data-stamp="paisley" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;">🍃 Paisley (Buti)</button>
+              <button class="btn-secondary" data-stamp="lotus" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;">🪷 Lotus (Kamalam)</button>
+              <button class="btn-secondary" data-stamp="elephant" style="padding: 0.35rem 0.75rem; font-size: 0.78rem;">🐘 Royal Elephant</button>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-secondary" id="clearTextileBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem;">Clear Fabric</button>
+              <button class="btn-primary" id="saveTextileBtn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem;">💾 Save Textile (+50 XP)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         6. LEARN BY DOING
+         ==================================================================== -->
+    <section class="learn-section" id="learn-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Gamified Learning & Masterclasses</div>
+          <h2 class="section-title">Learn by Doing</h2>
+          <p class="section-desc">
+            Internalize India's cultural wisdom through active challenges. Test your knowledge, solve monument mysteries, play classical rhythms on the virtual Tabla, and climb the National Leaderboard!
+          </p>
+        </div>
+
+        <!-- Gamified Tabs -->
+        <div class="lab-tabs-nav">
+          <button class="lab-tab-btn active" data-gametab="quiz">Cultural Quiz Challenge</button>
+          <button class="lab-tab-btn" data-gametab="match">Match the Art Form</button>
+          <button class="lab-tab-btn" data-gametab="monument">Identify the Monument</button>
+          <button class="lab-tab-btn" data-gametab="tabla">Virtual Tabla Percussion</button>
+        </div>
+
+        <!-- Quiz Activity -->
+        <div class="quiz-container-box" id="quizActivityBox">
+          <div class="quiz-header-bar">
+            <span class="quiz-progress-text" id="quizProgressText">Question 1 of 5</span>
+            <div class="quiz-timer-pill">
+              <span>⏱️</span>
+              <span id="quizTimerText">20s</span>
+            </div>
+          </div>
+
+          <h3 class="quiz-question-title" id="quizQuestionTitle">
+            Which ancient temple features an 80-tonne monolithic granite cupola capstone hauled up a 4-kilometer earthen incline?
+          </h3>
+
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Populated via JS -->
+          </div>
+
+          <div class="quiz-feedback-box" id="quizFeedbackBox">
+            <h4 style="font-size: 1rem; color: var(--gold-light); margin-bottom: 0.35rem;" id="quizFeedbackTitle">Explanation</h4>
+            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.55;" id="quizFeedbackText">
+              The Brihadisvara Temple (Thanjavur), consecrated by Rajaraja Chola I in 1010 CE, is built entirely of interlocking granite without binding mortar.
+            </p>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button class="btn-primary" id="nextQuizBtn" style="display: none;">Next Question →</button>
+          </div>
+        </div>
+
+        <!-- Match the Art Form Activity (Hidden by default) -->
+        <div class="quiz-container-box" id="matchActivityBox" style="display: none; max-width: 900px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: #FFFFFF;">Match Art Forms to Their Origin States</h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem;">Click an art form card, then click its corresponding Indian state!</p>
+            </div>
+            <div class="xp-badge-pill" id="matchScorePill">Matches: 0 / 4</div>
+          </div>
+
+          <div class="match-cards-grid" id="matchCardsGrid">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Identify the Monument (Hidden by default) -->
+        <div class="quiz-container-box" id="monumentGameBox" style="display: none;">
+          <div style="text-align: center; margin-bottom: 1.5rem;">
+            <div style="font-size: 4rem; margin-bottom: 0.5rem;" id="monumentClueIcon">🛕</div>
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF;" id="monumentClueDesc">
+              "I am carved entirely out of a single gigantic basalt cliff from top to bottom at Ellora Caves."
+            </h3>
+          </div>
+
+          <div class="quiz-options-grid" id="monumentOptionsGrid">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Tabla Drum Activity (Hidden by default) -->
+        <div class="quiz-container-box" id="tablaActivityBox" style="display: none; max-width: 860px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF;">🪘 Virtual Tabla Percussion Studio</h3>
+            <span class="techora-badge">Web Audio Synth</span>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Tap drum heads to trigger real acoustic synthesizer harmonics. Learn classical bols: <strong>Dha, Dhin, Ta, Na, Ge</strong>.
+          </p>
+
+          <div class="tabla-pads-container">
+            <div class="tabla-drum" data-bol="dha">
+              <div class="drum-center-spot"><span class="drum-syllable">DHA</span></div>
+              <span class="drum-label">Bayan + Dayan</span>
+            </div>
+            <div class="tabla-drum" data-bol="dhin">
+              <div class="drum-center-spot"><span class="drum-syllable">DHIN</span></div>
+              <span class="drum-label">Resonant Bass</span>
+            </div>
+            <div class="tabla-drum" data-bol="ta">
+              <div class="drum-center-spot"><span class="drum-syllable">TA</span></div>
+              <span class="drum-label">Rim Strike</span>
+            </div>
+            <div class="tabla-drum" data-bol="ge">
+              <div class="drum-center-spot"><span class="drum-syllable">GE</span></div>
+              <span class="drum-label">Bass Glide</span>
+            </div>
+          </div>
+
+          <div class="rhythm-controls">
+            <button class="btn-primary" id="playTeentaalBtn" style="padding: 0.5rem 1rem; font-size: 0.85rem;">
+              <span>▶</span> Play Teentaal (16 Beats)
+            </button>
+            <div class="rhythm-beats-display">
+              <div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div>
+              <div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div>
+              <div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div>
+              <div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div><div class="beat-dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         7. HERITAGE DOCUMENTATION (DOCUMENT HERITAGE)
+         ==================================================================== -->
+    <section class="document-section" id="document-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Citizen Heritage Science</div>
+          <h2 class="section-title">Document Your Heritage</h2>
+          <p class="section-desc">
+            Safeguard local living traditions, elder oral histories, endangered dialects, and village crafts. Submissions undergo academic review and are published to the National Living Map.
+          </p>
+        </div>
+
+        <!-- Moderation & Verification Pipeline Tracker -->
+        <div class="moderation-pipeline-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <h4 style="font-family: var(--font-serif); font-size: 1.15rem; color: #FFFFFF;">
+              National Cultural Verification Pipeline
+            </h4>
+            <span class="verified-badge">Academic Board Moderation</span>
+          </div>
+
+          <div class="pipeline-steps-grid">
+            <div class="pipeline-step-item">
+              <div class="pipeline-step-num">01</div>
+              <div class="pipeline-step-title">Community Submission</div>
+              <div class="pipeline-step-desc">Student records oral lore with elder consent, photos, audio & video.</div>
+            </div>
+            <div class="pipeline-step-item">
+              <div class="pipeline-step-num">02</div>
+              <div class="pipeline-step-title">Scholarly Review</div>
+              <div class="pipeline-step-desc">ASI / IGNCA curators review historical veracity & community lineage.</div>
+            </div>
+            <div class="pipeline-step-item">
+              <div class="pipeline-step-num">03</div>
+              <div class="pipeline-step-title">Provenance Check</div>
+              <div class="pipeline-step-desc">Audio spectrogram and local geography validated against state gazettes.</div>
+            </div>
+            <div class="pipeline-step-item">
+              <div class="pipeline-step-num">04</div>
+              <div class="pipeline-step-title">Living Map Publication</div>
+              <div class="pipeline-step-desc">Record published with verified seal; student awarded +100 XP badge.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Submission Form Card -->
+        <div class="doc-form-card">
+          <form id="documentHeritageForm">
+            <div class="form-group">
+              <label class="form-label">Tradition / Monument / Oral Lore Title</label>
+              <input type="text" class="form-input" id="docTitleInput" placeholder="e.g. Grandmother's Gond Tattoo Lore (Godaana), Aiyanar Terracotta Horses..." required />
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-group">
+                <label class="form-label">Category</label>
+                <select class="form-select" id="docCategorySelect">
+                  <option value="Oral History">Oral Folklore & Chants</option>
+                  <option value="Master Craft">Traditional Craft & Handloom</option>
+                  <option value="Festival">Local Village Festival</option>
+                  <option value="Culinary Tradition">Indigenous Heirloom Recipe</option>
+                  <option value="Monument">Sacred Grove / Monument</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">State / Region</label>
+                <select class="form-select" id="docStateSelect">
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Assam">Assam</option>
+                  <option value="West Bengal">West Bengal</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Local Community & Hereditary Lineage</label>
+              <input type="text" class="form-input" id="docCommunityInput" placeholder="e.g. Pardhan Gond tribal bards, Velar potters of Kothamangalam..." required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Narrative Story & Cultural Significance</label>
+              <textarea class="form-textarea" id="docStoryInput" rows="4" placeholder="Detail the tradition, tools used, elder memories, and why it is urgent to preserve..." required></textarea>
+            </div>
+
+            <!-- Media Attachments (Photo, Audio, Video) -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+              <!-- Photo Upload Simulator -->
+              <div class="form-group">
+                <label class="form-label">📸 Photo Evidence Upload</label>
+                <input type="file" class="form-input" id="docPhotoInput" accept="image/*" />
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Upload field photos of artisans, rituals, or artifacts.</div>
+              </div>
+
+              <!-- Video Link Attachment -->
+              <div class="form-group">
+                <label class="form-label">🎥 Video Link / Footage</label>
+                <input type="url" class="form-input" id="docVideoInput" placeholder="https://youtube.com/watch?v=..." />
+                <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">Link to documented ritual or artisan interview.</div>
+              </div>
+            </div>
+
+            <!-- Live Browser Audio Recording Suite -->
+            <div class="form-group" style="background: rgba(11, 17, 32, 0.65); padding: 1.25rem; border-radius: 1rem; border: 1px solid var(--border-gold);">
+              <label class="form-label" style="display: flex; align-items: center; justify-content: space-between;">
+                <span>🎙️ Live Oral History Audio Recorder</span>
+                <span id="voiceRecorderStatus" style="font-size: 0.75rem; color: var(--emerald-accent);">Mic Ready</span>
+              </label>
+              <p style="font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 0.75rem;">
+                Capture raw audio memories from elder tradition bearers directly through your browser.
+              </p>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <button type="button" class="btn-primary" id="startVoiceRecBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem;">
+                  🔴 Start Recording
+                </button>
+                <button type="button" class="btn-secondary" id="stopVoiceRecBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem; display: none;">
+                  ⏹ Stop
+                </button>
+                <button type="button" class="btn-secondary" id="playVoiceRecBtn" style="padding: 0.45rem 1rem; font-size: 0.82rem; display: none;">
+                  ▶ Playback Audio
+                </button>
+              </div>
+            </div>
+
+            <!-- Crucial Ethical, Privacy & Copyright Considerations -->
+            <div class="doc-ethics-box">
+              <h4 style="font-size: 0.95rem; color: var(--gold-light); margin-bottom: 0.75rem; font-family: var(--font-serif);">
+                Ethical, Privacy & Copyright Framework (SIH 2026 Mandate)
+              </h4>
+
+              <div class="consent-checkbox-row">
+                <input type="checkbox" id="consentFPIC" required />
+                <label for="consentFPIC">
+                  <strong>Free, Prior and Informed Consent (FPIC):</strong> I certify that the elder tradition bearers and local community custodians were fully informed and granted explicit consent to record and archive this cultural knowledge.
+                </label>
+              </div>
+
+              <div class="consent-checkbox-row">
+                <input type="checkbox" id="consentLicense" required />
+                <label for="consentLicense">
+                  <strong>Cultural Attribution License (CC-BY-NC 4.0):</strong> I agree to share this documentation under Creative Commons Attribution-NonCommercial, protecting community knowledge from unauthorized commercial exploitation.
+                </label>
+              </div>
+
+              <div class="consent-checkbox-row">
+                <input type="checkbox" id="consentSacred" required />
+                <label for="consentSacred">
+                  <strong>Sacred Knowledge Protocol:</strong> I confirm this submission does not disclose esoteric, secret, or gender-restricted sacred rites without authorized hereditary clan elder permission.
+                </label>
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+              <button type="submit" class="btn-primary" style="padding: 0.8rem 1.85rem;">
+                <span>Submit for Verification (+100 XP)</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="jali-border"></div>
+
+    <!-- ====================================================================
+         8. USER PROFILE (PROFILE)
+         ==================================================================== -->
+    <section class="profile-section" id="profile-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Scholar Portfolio</div>
+          <h2 class="section-title">User Profile & Heritage Credentials</h2>
+          <p class="section-desc">
+            Track your level progression, showcase earned cultural badges, review completed learning masterclasses, and manage saved lab creations.
+          </p>
+        </div>
+
+        <!-- User Profile Header Card -->
+        <div class="profile-header-card">
+          <div class="profile-main-info">
+            <div class="profile-avatar-large">👨‍🎓</div>
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #FFFFFF;" id="profileNameDisplay">
+                Aarav Sharma
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 0.5rem;">
+                Grade 11 · Delhi Public School, R.K. Puram · SIH 2026 Youth Scholar
+              </p>
+              <div class="profile-rank-badge">Level 4: Cultural Connoisseur</div>
+            </div>
+          </div>
+
+          <!-- XP Meter -->
+          <div class="student-xp-meter">
+            <div class="xp-meter-header">
+              <span>Experience Points (XP)</span>
+              <span class="xp-current-val" id="profileXpVal">1,450 / 2,000 XP</span>
+            </div>
+            <div class="xp-progress-bar-bg">
+              <div class="xp-progress-bar-fill" id="profileXpFill" style="width: 72.5%;"></div>
+            </div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.4rem;">
+              550 XP remaining to achieve <strong>Level 5: Master Historian</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Stats Grid -->
+        <div class="profile-stats-grid">
+          <div class="profile-stat-box">
+            <div class="profile-stat-icon">🔥</div>
+            <div class="profile-stat-info">
+              <h4>7 Days</h4>
+              <p>Active Learning Streak</p>
+            </div>
+          </div>
+
+          <div class="profile-stat-box">
+            <div class="profile-stat-icon">🎖️</div>
+            <div class="profile-stat-info">
+              <h4 id="profileBadgesCount">5 / 8</h4>
+              <p>Badges Unlocked</p>
+            </div>
+          </div>
+
+          <div class="profile-stat-box">
+            <div class="profile-stat-icon">⭐</div>
+            <div class="profile-stat-info">
+              <h4 id="profileBookmarksCount">6 Items</h4>
+              <p>Saved to My Heritage</p>
+            </div>
+          </div>
+
+          <div class="profile-stat-box">
+            <div class="profile-stat-icon">🎨</div>
+            <div class="profile-stat-info">
+              <h4 id="profileCreationsCount">3 Designs</h4>
+              <p>Lab Creations Saved</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Column Profile Content Layout -->
+        <div class="dash-content-grid">
+          <!-- Left: Completed Activities & My Submissions -->
+          <div>
+            <!-- Completed Activities Checklist -->
+            <div class="dash-module-box">
+              <div class="dash-module-header">
+                <h3 class="dash-module-title">Completed Learning Activities</h3>
+                <span class="techora-badge">7 / 10 Mastered</span>
+              </div>
+
+              <div class="quests-list">
+                <div class="quest-item">
+                  <div class="quest-left">
+                    <div class="quest-check done">✓</div>
+                    <span class="quest-title">Conversed with Aruvi on Brihadisvara Temple Acoustics</span>
+                  </div>
+                  <span class="quest-xp-tag">+50 XP</span>
+                </div>
+
+                <div class="quest-item">
+                  <div class="quest-left">
+                    <div class="quest-check done">✓</div>
+                    <span class="quest-title">Synthesized 16-beat Teentaal on virtual Tabla</span>
+                  </div>
+                  <span class="quest-xp-tag">+50 XP</span>
+                </div>
+
+                <div class="quest-item">
+                  <div class="quest-left">
+                    <div class="quest-check done">✓</div>
+                    <span class="quest-title">Drawn an 8-Fold Symmetrical Kolam on Canvas</span>
+                  </div>
+                  <span class="quest-xp-tag">+50 XP</span>
+                </div>
+
+                <div class="quest-item">
+                  <div class="quest-left">
+                    <div class="quest-check done">✓</div>
+                    <span class="quest-title">Shaped a clay vase in Virtual Pottery Wheel Studio</span>
+                  </div>
+                  <span class="quest-xp-tag">+50 XP</span>
+                </div>
+
+                <div class="quest-item">
+                  <div class="quest-left">
+                    <div class="quest-check">○</div>
+                    <span class="quest-title">Score 100% on Cultural Quiz Challenge</span>
+                  </div>
+                  <button class="btn-primary" style="padding: 0.35rem 0.85rem; font-size: 0.78rem;" onclick="window.location.hash='#learn-section'">
+                    Start Quiz (+100 XP)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- My Saved Creative Lab Creations -->
+            <div class="dash-module-box">
+              <div class="dash-module-header">
+                <h3 class="dash-module-title">My Creative Lab Creations</h3>
+                <span class="techora-badge">Heritage Lab</span>
+              </div>
+
+              <div class="saved-creations-grid" id="savedCreationsGrid">
+                <!-- Dynamically populated from JS -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Badges, Bookmarks & Certificate -->
+          <div>
+            <!-- Badges Earned Grid -->
+            <div class="dash-module-box">
+              <div class="dash-module-header">
+                <h3 class="dash-module-title">Earned Cultural Badges</h3>
+                <span class="techora-badge">Credentials</span>
+              </div>
+              <div class="badges-grid" id="profileBadgesGrid">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+
+            <!-- Bookmarked Heritage Items -->
+            <div class="dash-module-box">
+              <div class="dash-module-header">
+                <h3 class="dash-module-title">Saved Heritage Bookmarks</h3>
+                <span class="techora-badge" id="profileBookmarkBadge">6 Items</span>
+              </div>
+              <div id="profileBookmarksList" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+
+            <!-- Certificate Card -->
+            <div class="dash-module-box" style="text-align: center; background: linear-gradient(135deg, rgba(212, 175, 55, 0.12), rgba(14, 22, 38, 0.9));">
+              <div style="font-size: 3rem; margin-bottom: 0.75rem;">📜</div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: #FFFFFF; margin-bottom: 0.5rem;">
+                Cultural Ambassador Certificate
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">
+                Smart India Hackathon 2026 certified credential verifying your mastery in Indian civilizational heritage.
+              </p>
+              <button class="btn-gold" id="generateCertBtn">
+                Generate & View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="jali-border"></div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo" style="margin-bottom: 0.5rem;">
+            <div class="brand-emblem">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+              </svg>
+            </div>
+            <div class="brand-name">HERITAGE <span>360</span></div>
+          </div>
+          <p>
+            Experience, learn and preserve India's living heritage through interactive technology. Built with cultural authenticity and academic verification for Smart India Hackathon 2026.
+          </p>
+          <div class="footer-socials">
+            <a href="javascript:void(0)" class="social-icon-btn" aria-label="Twitter">𝕏</a>
+            <a href="javascript:void(0)" class="social-icon-btn" aria-label="LinkedIn">in</a>
+            <a href="javascript:void(0)" class="social-icon-btn" aria-label="YouTube">▶</a>
+            <a href="javascript:void(0)" class="social-icon-btn" aria-label="GitHub">⌘</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Platform Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#map-section">Living Heritage Map</a></li>
+            <li><a href="#timetravel-section">Time Travel India</a></li>
+            <li><a href="#avatar-section">AI Avatar Aruvi</a></li>
+            <li><a href="#lab-section">Heritage Lab</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Interactive Studios</h4>
+          <ul class="footer-links">
+            <li><a href="#lab-section">Kolam & Pattern Studio</a></li>
+            <li><a href="#lab-section">Virtual Pottery Wheel</a></li>
+            <li><a href="#learn-section">Cultural Quiz</a></li>
+            <li><a href="#document-section">Document Heritage</a></li>
+            <li><a href="#profile-section">User Profile</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SIH 2026 Updates</h4>
+          <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.75rem;">
+            Receive monthly releases of newly 3D-scanned monuments and artisan interviews.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Dhanyavaad! Subscribed to Heritage 360 updates.');">
+            <input type="email" class="newsletter-input" placeholder="Enter student email" required>
+            <button type="submit" class="btn-primary" style="padding: 0.65rem 1.25rem; font-size: 0.85rem;">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 <strong>HERITAGE 360</strong>. Smart India Hackathon 2026 Edition.
+        </div>
+        <div style="font-family: var(--font-serif); color: var(--gold-accent);">
+          वसुधैव कुटुम्बकम् — "The World is One Family"
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====================================================================
+       MODALS
+       ==================================================================== -->
+
+  <!-- Deep-Dive Dossier Modal -->
+  <div class="modal-overlay" id="deepDiveModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="deepDiveTitle">Heritage Deep-Dive</h3>
+        <button class="modal-close-btn" id="closeDeepDiveModalBtn">&times;</button>
+      </div>
+      <div class="modal-body" id="deepDiveBody">
+        <!-- Populated via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Official SIH 2026 Certificate Modal -->
+  <div class="modal-overlay" id="certModal">
+    <div class="modal-box" style="max-width: 820px;">
+      <div class="modal-header">
+        <h3>Smart India Hackathon 2026 Certificate</h3>
+        <button class="modal-close-btn" id="closeCertModalBtn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="certificate-preview-box" id="certificatePrintArea">
+          <div class="cert-emblem">🇮🇳</div>
+          <div class="cert-title">Certificate of Cultural Excellence</div>
+          <div class="cert-subtitle">Smart India Hackathon 2026 · Ministry of Culture & Education Consortium</div>
+          <div style="font-size: 0.85rem; color: #555; text-transform: uppercase; letter-spacing: 0.08em;">This certifies that</div>
+          <div class="cert-recipient" id="certStudentName">Aarav Sharma</div>
+          <p class="cert-text">
+            has demonstrated exceptional scholarly dedication to discovering, learning, documenting, and digitally preserving the 5,000-year civilizational heritage, indigenous arts, and living traditions of Bharat on the <strong>HERITAGE 360</strong> platform.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 2rem; font-size: 0.82rem; color: #666; font-weight: 600;">
+            <span>Credential ID: SIH2026-HERITAGE-8492</span>
+            <span>Earned Level: Cultural Connoisseur (1,450 XP)</span>
+          </div>
+          <div class="cert-signatures">
+            <div class="cert-sig-item">
+              <div class="cert-sig-line">Dr. Rajeshwari Iyer</div>
+              <span>Chief Curator, Archaeological Survey of India</span>
+            </div>
+            <div class="cert-sig-item">
+              <div class="cert-sig-line">Dr. Abhinav Shukla</div>
+              <span>National Coordinator, SIH 2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+          <button class="btn-secondary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+          <button class="btn-primary" onclick="alert('Digital Certificate verified and saved to student portfolio!')">
+            Save Credential
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Popup -->
+  <div class="toast-notification" id="toastNotice">
+    <span style="font-size: 1.5rem;" id="toastIcon">🎉</span>
+    <div>
+      <div style="font-weight: 700; color: #FFFFFF;" id="toastTitle">XP Awarded!</div>
+      <div style="font-size: 0.8rem; color: var(--gold-accent);" id="toastDesc">+100 XP gained for documenting heritage.</div>
+    </div>
+  </div>
+
+  <!-- Leaflet GIS Map Library -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  
+  <!-- Canvas Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+
+  <!-- Application Controller Script -->
+  <script src="js/app.js"></script>
+</body>
+</html>
